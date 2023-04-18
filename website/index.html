@@ -27,6 +27,23 @@
       h1 {
 	  text-align: center;
 	  font-size: 33pt;
+	  opacity: 0;
+	  animation: appear 1.5s forwards;
+	  animation-delay: 0.5s;
+      }
+
+      div > h1:nth-child(2) {
+	  animation-delay: 2s;
+      }
+
+      @keyframes appear {
+	  from {
+	      opacity: 0;
+	  }
+
+	  to {
+	      opacity: 1.0;
+	  }
       }
 
       .handwriting {
@@ -36,9 +53,12 @@
     </style>
   </head>
   <body>
+    <nav>
+
+    </nav>
     <div>
       <h1 class="handwriting"> Welcome </h1>
-      <h1> I'm An0rak . </h1>
+      <h1> I'm An0rak. </h1>
     </div>
    </body>
 </html>
