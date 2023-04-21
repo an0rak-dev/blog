@@ -1,60 +1,42 @@
 <html>
   <head>
     <title>An0rak Universe</title>
-    <link rel="icon" href="logo.svg" type="image/svg+xml" />
-    <style>
-      @font-face {
-	  font-family: "andala";
-	  src: url("andala.otf");
-      }
-      
-      @font-face {
-	  font-family: "notera";
-          src: url("notera.ttf");
-      }
-      
-      body {
-	  font-family: "andala", sans-serif;
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-      }
-
-      div {
-	  
-      }
-
-      h1 {
-	  text-align: center;
-	  font-size: 33pt;
-	  opacity: 0;
-	  animation: appear 1.5s forwards;
-	  animation-delay: 0.5s;
-      }
-
-      div > h1:nth-child(2) {
-	  animation-delay: 2s;
-      }
-
-      @keyframes appear {
-	  from {
-	      opacity: 0;
-	  }
-
-	  to {
-	      opacity: 1.0;
-	  }
-      }
-
-      .handwriting {
-	  font-family: "notera", sans-serif;
-      }
-      
-    </style>
+    <link rel="icon" href="/assets/images/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
-  <body>
+  <body id="home">
     <nav>
-
+      <ul>
+        <li>
+          <a href="/">
+            <img src="/assets/images/logo.svg" alt="An0rak's logo" />
+          </a>
+        </li>
+        <li>
+          <p>About</p>
+          <!-- About Me, CV, Social links -->
+        </li>
+        <li>
+          <p>Work</p>
+          <!-- Projects (avatar, this blog), Public Talks (exported from YouTube) -->
+        </li>
+        <li>
+          <p>Ramblings</p>
+          <!-- Blog, Journal -->
+        </li>
+        <div>
+          <li>
+            <a href="https://twitter.com/an0rak_dev">
+              <img src="/assets/images/twitter.svg" alt="Twitter's Logo" />
+            </a>
+          </li>
+          <li>
+            <a href="mailto:nieuwlandt.s@an0rak.dev">
+              <img src="/assets/images/mail.svg" alt="Email" />
+            </a>
+          </li>
+        </div>
+      </ul>
     </nav>
     <div>
       <h1 class="handwriting"> Welcome </h1>
