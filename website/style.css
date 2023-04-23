@@ -1,3 +1,18 @@
+/************************* CONFIGS **************************/
+:root {
+    --nav-height: 60px;
+    /*  TODO: Uncomment after working on Home page
+    --anim-appear-duration: 1.5s; 
+    --home-welcome-delay: 0.5s;
+    --home-whoami-delay: 2.5s;
+    --home-navbar-delay: 3.3s;
+    */
+    --anim-appear-duration: 0.1s; 
+    --home-welcome-delay: 0s;
+    --home-whoami-delay: 0s;
+    --home-navbar-delay: 0s;
+}
+
 /************************* GLOBALS **************************/
 @font-face {
     font-family: "andala";
@@ -28,11 +43,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
+    overflow-x: hidden;
 }
 
 h1 {
     text-align: center;
     font-size: 33pt;
+}
+
+a {
+    text-decoration: none;
 }
 
 /**************************** NAVBAR **************************/
@@ -44,6 +65,9 @@ nav {
     display: block;
     margin: 0;
     font-size: 10pt;
+    height: var(--nav-height);
+    max-height: var(--nav-height);
+    background-color: rgba(0, 0, 0, 0.015);
 }
 
 nav > ul > li:first-child img {
@@ -66,20 +90,38 @@ nav div {
     margin-right: 2em;
 }
 
+nav li {
+    cursor: pointer;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: var(--nav-height);
+    width: 100%;
+    backdrop-filter: blur(1.5rem);
+    z-index:999;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
 /*********************** HOME PAGE *************************/
 #home h1, #home nav {
     opacity: 0;
-    animation: appear 1.5s forwards;
+    animation: appear var(--anim-appear-duration) forwards;
 }
 
 #home h1 {
-    animation-delay: 0.5s;
+    animation-delay: var(--home-welcome-delay);
 }
 
 #home h1:nth-child(2) {
-    animation-delay: 2s;
+    animation-delay: var(--home-whoami-delay);
 }
 
 #home nav {
-    animation-delay: 3.3s;
+    animation-delay: var(--home-navbar-delay);
 }
