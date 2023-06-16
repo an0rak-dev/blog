@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>An0rak Universe</title>
+    <meta charset="UTF-8">
     <link rel="icon" href="/assets/images/logo.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
@@ -8,7 +9,7 @@
     <script src="main.js"></script>
     <nav>
       <ul>
-        <li>
+        <li onmouseover="focusNavigationOn(0)" onmouseout="unfocusNavigation()">
           <a href="/">
             <img src="/assets/images/logo.svg" alt="An0rak's logo" />
           </a>
@@ -17,17 +18,26 @@
           <p>About</p>
           <div>
             <ul>
-              <li>About Me</li>
-              <li>Resume</li>
+              <li>
+                <a href="">
+                  🙋‍♂️ About Me
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  👨‍💻 Resume
+                </a>
+              </li>
+              <!-- TODO: Put this in the About Me page.
               <li>
                 <div>
-                  <a href="https://facebook.com"> <!-- TODO -->
+                  <a href=""> 
                     <img src="/assets/images/fb.svg" class="social-icon" alt="Facebook" />
                   </a>
                   <a href="https://twitter.com/an0rak_dev">
                     <img src="/assets/images/twitter.svg" class="social-icon" alt="Twitter" />
                   </a>
-                  <a href="">  <!-- TODO -->
+                  <a href=""> 
                     <img src="/assets/images/insta.svg" class="social-icon" alt="Instagram" />
                   </a>
                   <a href="https://linkedin.com/in/sylvain-nieuwlandt">
@@ -36,47 +46,67 @@
                   <a href="https://github.com/an0rak-dev">
                     <img src="/assets/images/gh.svg" class="social-icon" alt="GitHub" />
                   </a>
-                  <a href=""> <!-- TODO -->
+                  <a href="">
                     <img src="/assets/images/gl.svg" class="social-icon" alt="GitLab" />
                   </a>
-                  <a href=""> <!-- TODO -->
+                  <a href=""> 
                     <img src="/assets/images/reddit.svg" class="social-icon" alt="Reddit" />
                   </a>
-                  <a href=""> <!-- TODO -->
+                  <a href="">
                     <img src="/assets/images/yt.svg" class="social-icon" alt="YouTube" />
                   </a>
-                  <a href=""> <!-- TODO -->
+                  <a href="">
                     <img src="/assets/images/twitch.svg" class="social-icon" alt="Twitch" />
                   </a> 
-                  <a href=""> <!-- TODO -->
+                  <a href="">
                     <img src="/assets/images/so.svg" class="social-icon" alt="StackOverflow" />
                   </a>
                 </div>
               </li>
+            -->
             </ul>
           </div>
         </li>
-        <li>
+        <li onmouseover="focusNavigationOn(2)" onmouseout="unfocusNavigation()">
           <p>Work</p>
-          <!-- Projects (avatar, this blog), Public Talks (exported from YouTube) -->
+          <ul>
+            <li>
+              <a href="">
+                🛠️ Projects <!-- (avatar, this blog....) -->
+              </a>
+            </li>
+            <li>
+              <a href="">
+                🎤 Talks <!-- (exported from youtube) -->
+              </a>
+            </li>
+          </ul>
         </li>
-        <li>
+        <li onmouseover="focusNavigationOn(3)" onmouseout="unfocusNavigation()">
           <p>Ramblings</p>
-          <!-- Blog, Journal -->
+          <ul>
+            <li>
+              <a href="">
+                📰 Blog 
+              </a>
+            </li>
+            <li>
+              <a href="">
+                📓 Journal
+              </a>
+            </li>
+          </ul>
         </li>
-        <div>
-          <a href="https://twitter.com/an0rak_dev">
-            <img src="/assets/images/twitter.svg" alt="Twitter's Logo" />
-          </a>
+        <li onmouseover="focusNavigationOn(4)" onmouseout="unfocusNavigation()">
           <a href="mailto:nieuwlandt.s@an0rak.dev">
             <img src="/assets/images/mail.svg" alt="Email" />
           </a>
-        </div>
+        </li>
       </ul>
     </nav>
-    <div>
+    <main>
       <h1 class="handwriting"> Welcome </h1>
       <h1> I'm An0rak. </h1>
-    </div>
+    </main>
    </body>
 </html>

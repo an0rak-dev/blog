@@ -1,16 +1,15 @@
 /************************* CONFIGS **************************/
 :root {
+    --main-color: black;
+    --accent-color: black;
+    --masking-opacity: 0.5;
+    --masking-blur: 4px;
+    --nav-bg-color: rgba(0, 0, 0, 0.045);
     --nav-height: 60px;
-    /*  TODO: Uncomment after working on Home page
     --anim-appear-duration: 1.5s; 
     --home-welcome-delay: 0.5s;
     --home-whoami-delay: 2.5s;
     --home-navbar-delay: 3.3s;
-    */
-    --anim-appear-duration: 0.1s; 
-    --home-welcome-delay: 0s;
-    --home-whoami-delay: 0s;
-    --home-navbar-delay: 0s;
 }
 
 /************************* GLOBALS **************************/
@@ -38,8 +37,14 @@
     font-family: "notera", sans-serif;
 }
 
+.masked {
+    opacity: var(--masking-opacity);
+    filter: blur(var(--masking-blur));
+}
+
 body {
     font-family: "andala", sans-serif;
+    color: var(--main-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,6 +59,7 @@ h1 {
 
 a {
     text-decoration: none;
+    color: var(--main-color);
 }
 
 /**************************** NAVBAR **************************/
@@ -67,12 +73,17 @@ nav {
     font-size: 10pt;
     height: var(--nav-height);
     max-height: var(--nav-height);
-    background-color: rgba(0, 0, 0, 0.015);
+    background-color: var(--nav-bg-color);
 }
 
 nav > ul > li:first-child img {
     width: 40px;
     height: 40px;
+}
+
+nav > ul > li:first-child,
+nav > ul > li:last-child {
+    padding: 0px 20px;
 }
 
 nav img {
@@ -86,10 +97,6 @@ nav ul {
     list-style: none;
 }
 
-nav div {
-    margin-right: 2em;
-}
-
 nav li {
     cursor: pointer;
 }
@@ -97,8 +104,9 @@ nav li {
 nav ul ul {
     display: none;
     position: absolute;
+    box-shadow: 0px 3px 5px -1px #cccccc;
     width: 10%;
-    padding: 0;
+    padding: 5px;
     top: calc(var(--nav-height) - 2px);
     backdrop-filter: blur(1.5rem);
     z-index:999;
@@ -106,21 +114,18 @@ nav ul ul {
 
 nav ul ul > li {
     padding: 3px;
+    margin: 3px 0;
 }
 
-nav .social-icon {
-    float: left;
-    margin: 2px;
+nav ul ul > li:hover > a {
+    border-left: 2px solid var(--main-color);
+    padding-left: 10px;
+    transition: all 0.3s ease;
 }
 
 nav ul li:hover ul,
 nav ul li:hover div:hover {
     display: block;
-    box-shadow: 0px 3px 5px -1px #cccccc;
-}
-
-.nav-item-masked {
-    color: #c0c0c0;
 }
 
 /*********************** HOME PAGE *************************/
