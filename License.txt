@@ -1,6 +1,6 @@
 Icons 
     Authors : The Pictogrammers Team (https://www.iconarchive.com/artist/pictogrammers.html)
-    Source : https://www.iconarchive.com/show/material-icons-by-pictogrammers.36.html
+    Source : https://www.iconarchive.com/show/material-icons-by-pictogrammers.html
     License:
         Pictogrammers Free License
         --------------------------
