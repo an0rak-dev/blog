@@ -1,0 +1,18 @@
+
+/*********************** HOME PAGE *************************/
+h1, nav {
+    opacity: 0;
+    animation: appear var(--anim-appear-duration) forwards;
+}
+
+h1 {
+    animation-delay: var(--home-welcome-delay);
+}
+
+h1:nth-child(2) {
+    animation-delay: var(--home-whoami-delay);
+}
+
+nav {
+    animation-delay: var(--home-navbar-delay);
+}

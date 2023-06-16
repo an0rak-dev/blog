@@ -15,12 +15,12 @@
 /************************* GLOBALS **************************/
 @font-face {
     font-family: "andala";
-    src: url("assets/fonts/andala.otf");
+    src: url("/assets/fonts/andala.otf");
 }
 
 @font-face {
     font-family: "notera";
-    src: url("assets/fonts/notera.ttf");
+    src: url("/assets/fonts/notera.ttf");
 }
 
 @keyframes appear {
@@ -126,22 +126,4 @@ nav ul ul > li:hover > a {
 nav ul li:hover ul,
 nav ul li:hover div:hover {
     display: block;
-}
-
-/*********************** HOME PAGE *************************/
-#home h1, #home nav {
-    opacity: 0;
-    animation: appear var(--anim-appear-duration) forwards;
-}
-
-#home h1 {
-    animation-delay: var(--home-welcome-delay);
-}
-
-#home h1:nth-child(2) {
-    animation-delay: var(--home-whoami-delay);
-}
-
-#home nav {
-    animation-delay: var(--home-navbar-delay);
 }
