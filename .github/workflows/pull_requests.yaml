@@ -1,0 +1,55 @@
+name: Pull Request checks
+
+on:
+    pull_request:
+        paths:
+            - src/generator/*
+            - .github/workflows/pull_requests.yaml
+
+jobs:
+    no-publish:
+        name: No publication on generator sources
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get the code
+              uses: actions/checkout@v3
+            - name: Make sure no publication was committed
+              run: |
+                publish_count=$(ls . | grep "docs" | wc -l)
+                if [ 0 -lt $publish_count ]; then
+                  echo "Published content detected. Failing the job."
+                  exit 1
+                fi
+    lint:
+        name: Lint the generator
+        runs-on: ubuntu-latest
+        steps:
+          - name: Get the code
+            uses: actions/checkout@v3
+          - name: Install Python
+            uses: actions/setup-python@v4
+            with:
+              python-version: '3.11'
+          - name: Install generator dependencies
+            run: |
+              cd src
+              python3 -m pip install -r requirements.txt
+          - name: Lint the code
+            run: pylint src/generator
+
+    format:
+        name: Check the generator format
+        runs-on: ubuntu-latest
+        steps:
+          - name: Get the code
+            uses: actions/checkout@v3
+          - name: Install Python
+            uses: actions/setup-python@v4
+            with:
+              python-version: '3.11'
+          - name: Install generator dependencies
+            run: |
+              cd src
+              python3 -m pip install -r requirements.txt
+          - name: Check the format
+            run: black --check --no-color --diff src/generator
