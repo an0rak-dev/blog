@@ -20,5 +20,5 @@ def main():
         io.write_webpage(static_page["output_name"], page)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

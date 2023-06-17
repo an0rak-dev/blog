@@ -5,10 +5,11 @@ import projectfs as project_filesystem
 
 def read_html_content(file_name):
     content_dir = project_filesystem.get_content_directory()
-    with open(os.path.join(content_dir, file_name), mode="r", encoding="utf-8") as html_fd:
+    with open(
+        os.path.join(content_dir, file_name), mode="r", encoding="utf-8"
+    ) as html_fd:
         html = html_fd.read()
     return html
-
 
 
 def write_webpage(page_name, content):

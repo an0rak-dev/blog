@@ -1,0 +1,41 @@
+name: Pull Request checks
+
+on:
+    pull_request:
+        paths:
+            - src/generator/*
+
+jobs:
+    lint:
+        name: Lint the generator
+        runs-on: ubuntu-latest
+        steps:
+          - name: Get the code
+            uses: actions/checkout@v3
+          - name: Install Python
+            uses: actions/setup-python@v4
+            with:
+              python-version: '3.11'
+          - name: Install generator dependencies
+            run: |
+              cd src
+              python3 -m pip install -r requirements.txt
+          - name: Lint the code
+            run: pylint generator
+
+    format:
+        name: Check the generator format
+        runs-on: ubuntu-latest
+        steps:
+          - name: Get the code
+            uses: actions/checkout@v3
+          - name: Install Python
+            uses: actions/setup-python@v4
+            with:
+              python-version: '3.11'
+          - name: Install generator dependencies
+            run: |
+              cd src
+              python3 -m pip install -r requirements.txt
+          - name: Check the format
+            run: black --check --no-color --diff generator
