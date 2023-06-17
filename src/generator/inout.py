@@ -1,9 +1,19 @@
+"""
+Manages the input/output operations for the generator.
+"""
+
 import os
 import shutil
 import projectfs as project_filesystem
 
 
 def read_html_content(file_name):
+    """
+    Read the content of the given file_name in the content directory and
+    return the result.
+
+    file_name: the name of the file to look for in the content directory.
+    """
     content_dir = project_filesystem.get_content_directory()
     with open(
         os.path.join(content_dir, file_name), mode="r", encoding="utf-8"
@@ -13,6 +23,13 @@ def read_html_content(file_name):
 
 
 def write_webpage(page_name, content):
+    """
+    Write the given content in the given page_name inside the distribution
+    directory.
+
+    page_name: the name of the created file in the distribution directory
+    content: the content to write in the file
+    """
     dist_dir = project_filesystem.get_dist_directory()
     page_path = os.path.join(dist_dir, page_name)
     print(f"Writing page {page_path}")
@@ -21,6 +38,10 @@ def write_webpage(page_name, content):
 
 
 def setup_dist_directory():
+    """
+    Create the distribution directory and copy all the public assets inside
+    it.
+    """
     dist_dir = project_filesystem.get_dist_directory()
     assets_dir = project_filesystem.get_assets_directory()
     if not os.path.isdir(dist_dir):
