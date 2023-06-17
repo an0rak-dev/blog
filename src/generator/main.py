@@ -2,6 +2,7 @@
 Entrypoint of the application
 """
 
+# pylint: disable=import-error
 import inout as io
 import pages
 import projectfs as project_filesystem

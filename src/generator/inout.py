@@ -2,6 +2,7 @@
 Manages the input/output operations for the generator.
 """
 
+# pylint: disable=import-error
 import os
 import shutil
 import projectfs as project_filesystem
