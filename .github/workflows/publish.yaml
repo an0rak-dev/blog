@@ -9,6 +9,8 @@ on:
       - src/contents/*
       - resources/*
 
+env:
+  BASE_URL: https://an0rak-dev.github.com/blog
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: cd src/ && python3 -m pip install -r requirements.txt
       - name: Generate the website
-        run: python3 src/generator/main.py
+        run: python3 src/generator/main.py ${{ env.BASE_URL }}
       - name: Log content
         run: ls dist/**/**
       - name: Upload the generation
@@ -39,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ env.BASE_URL }}
     steps:
       - id: deployment
         name: Deploy to GH Pages
