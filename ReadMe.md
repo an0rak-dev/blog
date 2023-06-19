@@ -8,8 +8,8 @@ This repository contains all the resources for my personal [blog](https://an0rak
 
 This blog is composed only by static web pages. Those web pages are generated using 
 [Jinja2 templates](https://pypi.org/project/Jinja2) during the CI phase. Those pages
-are then committed to a specific `/prod` branch which will deploy them using 
-[GitHub Pages](https://pages.github.com/).
+are then deployed using [GitHub Pages](https://pages.github.com/) based on a 
+[specific GitHub action](./.github/workflows/publish.yaml)
 
 Readers can then interact between each other and me using 
 [GitHub Discussions](https://github.com/features/discussions).

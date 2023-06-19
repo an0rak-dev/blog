@@ -59,4 +59,4 @@ def get_dist_directory():
     Returns the distribution directory where the generated website will
     be written.
     """
-    return os.path.join(get_root_directory(), "docs")
+    return os.path.join(get_root_directory(), "dist")
