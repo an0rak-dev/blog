@@ -1,0 +1,45 @@
+name: Publishing new content
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - src/contents/*
+      - resources/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Generate the website
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v3
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: cd src/ && python3 -m pip install -r requirements.txt
+      - name: Generate the website
+        run: python3 src/generator/main.py
+      - name: Upload the generation
+        uses: actions/upload-pages-artifact@v1
+        with: 
+          path: dist/
+  
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        name: Deploy to GH Pages
+        uses: actions/deploy-pages@v2
+    
