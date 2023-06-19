@@ -45,6 +45,8 @@ def setup_dist_directory():
     """
     dist_dir = project_filesystem.get_dist_directory()
     assets_dir = project_filesystem.get_assets_directory()
+    target_dir = os.path.join(dist_dir, "assets")
     if not os.path.isdir(dist_dir):
         os.mkdir(dist_dir)
-    shutil.copytree(assets_dir, os.path.join(dist_dir, "assets"), dirs_exist_ok=True)
+    print(f"Copying assets directory to {target_dir}")
+    shutil.copytree(assets_dir, target_dir, dirs_exist_ok=True)
