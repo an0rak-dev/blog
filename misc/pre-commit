@@ -7,7 +7,7 @@
 #
 # To enable this hook, rename this file to "pre-commit".
 
-docs_folder_count=$(git diff --cached --name-only | grep "docs" | wc -l)
+docs_folder_count=$(git diff --cached --name-only | grep "dist" | wc -l)
 current_branch=$(git branch --show-current)
 
 if [ 0 -lt $docs_folder_count ] && [ "prod" != "$current_branch" ]; then

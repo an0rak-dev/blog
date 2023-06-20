@@ -13,16 +13,6 @@
 }
 
 /************************* GLOBALS **************************/
-@font-face {
-    font-family: "andala";
-    src: url("/assets/fonts/andala.otf");
-}
-
-@font-face {
-    font-family: "notera";
-    src: url("/assets/fonts/notera.ttf");
-}
-
 @keyframes appear {
     from {
         opacity: 0;

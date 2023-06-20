@@ -15,7 +15,7 @@ jobs:
               uses: actions/checkout@v3
             - name: Make sure no publication was committed
               run: |
-                publish_count=$(ls . | grep "docs" | wc -l)
+                publish_count=$(ls . | grep "dist" | wc -l)
                 if [ 0 -lt $publish_count ]; then
                   echo "Published content detected. Failing the job."
                   exit 1
