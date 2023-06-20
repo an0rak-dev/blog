@@ -8,9 +8,10 @@ on:
     paths:
       - src/contents/**
       - resources/**
+      - .github/workflows/publish.yaml
 
 env:
-  BASE_URL: https://an0rak-dev.github.com/blog
+  BASE_URL: https://an0rak-dev.github.io/blog
 jobs:
   build:
     runs-on: ubuntu-latest
