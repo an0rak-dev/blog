@@ -6,8 +6,8 @@ on:
     branches:
       - main
     paths:
-      - src/contents/*
-      - resources/*
+      - src/contents/**
+      - resources/**
 
 env:
   BASE_URL: https://an0rak-dev.github.com/blog
