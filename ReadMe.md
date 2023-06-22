@@ -26,4 +26,4 @@ License. You can find a complete copy of this License [here](./LICENSE).
 Excepting my own logo, all the SVG icons are made by 
 [The Pictogrammers Team](https://www.iconarchive.com/artist/pictogrammers.html) and
 distributed under the Apache 2.0 License, which you can find 
-[here](./misc/icons-license.txt).
+[here](./docs/icons-license.txt).
