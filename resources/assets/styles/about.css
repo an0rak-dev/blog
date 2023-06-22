@@ -1,0 +1,8 @@
+main>img {
+	mask-image: url("{{ base }}/assets/images/hexagon-mask.png");
+	mask-repeat: no-repeat;
+	mask-size: 230px 250px;
+	-webkit-mask-image: url("{{ base }}/assets/images/hexagon-mask.png");
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size: 230px 250px;
+}

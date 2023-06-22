@@ -9,20 +9,12 @@ import pages
 import projectfs as project_filesystem
 from jinja2 import Environment, FileSystemLoader
 
-
 def render_page(base_url, style_path, content):
-    """
-    Render the given content inside the base web page.
-
-    base_url: the base url used in all absolute links referencing the generated website.
-    style_path: the custom CSS for this page to add in the webpage
-    content: the content to render in the <main> part of the webpage
-    """
     templates_dir = project_filesystem.get_templates_directory()
     fs_loader = FileSystemLoader(templates_dir)
-    jinja_env = Environment(loader=fs_loader)
-    page = jinja_env.get_template("base.html")
-    return page.render(base=base_url, style=style_path, main=content)
+    template_env = Environment(loader=fs_loader)
+    template = template_env.get_template("base.html")
+    return template.render(base=base_url, style=style_path, main=content)
 
 
 def main(base_url):

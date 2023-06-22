@@ -1,89 +1,92 @@
 <html>
-  <head>
+
+<head>
     <title>An0rak Universe</title>
     <meta charset="UTF-8">
     <style>
-      @font-face {
-        font-family: "andala";
-        src: url("{{ base }}/assets/fonts/andala.otf");
-      }
+        @font-face {
+            font-family: "andala";
+            src: url("{{ base }}/assets/fonts/andala.otf");
+        }
 
-      @font-face {
-          font-family: "notera";
-          src: url("{{ base }}/assets/fonts/notera.ttf");
-      }
+        @font-face {
+            font-family: "notera";
+            src: url("{{ base }}/assets/fonts/notera.ttf");
+        }
     </style>
     <link rel="icon" href="{{ base }}/assets/images/logo.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="{{ base }}/assets/styles/style.css" type="text/css" />
     {% if style is defined %}
-      <link rel="stylesheet" href="{{ base }}/{{ style }}" type=text/css />
+    <link rel="stylesheet" href="{{ base }}/{{ style }}" type=text/css />
     {% endif %}
-  </head>
-  <body id="home">
+</head>
+
+<body id="home">
     <script src="{{ base }}/assets/scripts/main.js"></script>
     <nav>
-      <ul>
-        <li onmouseover="focusNavigationOn(0)" onmouseout="unfocusNavigation()">
-          <a href="/">
-            <img src="{{ base }}/assets/images/logo.svg" alt="An0rak's logo" />
-          </a>
-        </li>
-        <li onmouseover="focusNavigationOn(1)" onmouseout="unfocusNavigation()">
-          <p>About</p>
-          <div>
-            <ul>
-              <li>
-                <a href="">
-                  🙋‍♂️ About Me
+        <ul>
+            <li onmouseover="focusNavigationOn(0)" onmouseout="unfocusNavigation()">
+                <a href="/">
+                    <img src="{{ base }}/assets/images/logo.svg" alt="An0rak's logo" />
                 </a>
-              </li>
-              <li>
-                <a href="">
-                  👨‍💻 Resume
+            </li>
+            <li onmouseover="focusNavigationOn(1)" onmouseout="unfocusNavigation()">
+                <p>About</p>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="/about.html">
+                                🙋‍♂️ About Me
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                👨‍💻 Resume
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li onmouseover="focusNavigationOn(2)" onmouseout="unfocusNavigation()">
+                <p>Work</p>
+                <ul>
+                    <li>
+                        <a href="">
+                            🛠️ Projects <!-- (avatar, this blog....) -->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            🎤 Talks <!-- (exported from youtube) -->
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li onmouseover="focusNavigationOn(3)" onmouseout="unfocusNavigation()">
+                <p>Ramblings</p>
+                <ul>
+                    <li>
+                        <a href="">
+                            📰 Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            📓 Journal
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li onmouseover="focusNavigationOn(4)" onmouseout="unfocusNavigation()">
+                <a href="mailto:nieuwlandt.s@an0rak.dev">
+                    <img src="{{ base }}/assets/images/mail.svg" alt="Email" />
                 </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li onmouseover="focusNavigationOn(2)" onmouseout="unfocusNavigation()">
-          <p>Work</p>
-          <ul>
-            <li>
-              <a href="">
-                🛠️ Projects <!-- (avatar, this blog....) -->
-              </a>
             </li>
-            <li>
-              <a href="">
-                🎤 Talks <!-- (exported from youtube) -->
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li onmouseover="focusNavigationOn(3)" onmouseout="unfocusNavigation()">
-          <p>Ramblings</p>
-          <ul>
-            <li>
-              <a href="">
-                📰 Blog 
-              </a>
-            </li>
-            <li>
-              <a href="">
-                📓 Journal
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li onmouseover="focusNavigationOn(4)" onmouseout="unfocusNavigation()">
-          <a href="mailto:nieuwlandt.s@an0rak.dev">
-            <img src="{{ base }}/assets/images/mail.svg" alt="Email" />
-          </a>
-        </li>
-      </ul>
+        </ul>
     </nav>
     <main>
-      {{ main }}
+        {{ main }}
     </main>
-   </body>
+</body>
+
 </html>
