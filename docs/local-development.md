@@ -24,6 +24,6 @@ python3 -m pip install -r requirements.txt
 To run the project :
 
 ```sh
-python3 src/generator/main.py
+python3 src/generator/main.py http://localhost:8000
 python3 -m http.server -d dist/ &
 ```
