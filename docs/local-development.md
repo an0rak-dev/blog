@@ -19,14 +19,11 @@ cd src
 python3 -m pip install -r requirements.txt
 ```
 
-In order to avoid commiting (for nothing) the generated site. Paste the 
-[pre-commit hook](./pre-commit) into your `.git/hooks` folder.
-
 ## Run the project
 
 To run the project :
 
 ```sh
 python3 src/generator/main.py
-python3 -m http.server -d docs/ &
+python3 -m http.server -d dist/ &
 ```
